@@ -139,7 +139,7 @@ net/ipv4/conf/all/accept_redirects=0\n\
 net/ipv4/conf/all/send_redirects=0\n\
 net/ipv4/ip_no_pmtu_disc=1'
 
-mobile_config = f'<?xml version="1.0" encoding="UTF-8"?>\n\
+mobile_config = '<?xml version="1.0" encoding="UTF-8"?>\n\
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n\
 <plist version="1.0">\n\
 <dict>\n\
