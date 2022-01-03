@@ -8,11 +8,11 @@ ___
 ## Шаг 1.
 ### Настройка на стороне сервера
 Качаем проект:
-```sh
+```shell
 git clone https://github.com/lastlibertarian/IKEv2_for_ios /root/IKEv2_for_ios
 ```
 Запускаем скрипт:
-```sh
+```shell
 python3 /root/IKEv2_for_ios/main.py
 ```
 Вводим имя соединения:
@@ -22,13 +22,18 @@ Enter login for your vpn
 ```
 После завершения получаем результат:
 
-```buildoutcfg
-Данные для подключения:
-ip - 313.172.626.1
-login - VPNclient
-password - 4M7xleu8Wvm3/Fb2fSoJGBuk1jM3Jl
-сертификат - /etc/ipsec.d/cacerts/ca-cert.pem
-файл для IOS - /root/VPNclient.mobileconfig
+
+>*Данные для подключения:*<br> 
+`ip - 313.172.626.1`<br> 
+`login - VPNclient`<br> 
+`password - 4M7xleu8Wvm3/Fb2fSoJGBuk1jM3Jl`<br> 
+`сертификат - /etc/ipsec.d/cacerts/ca-cert.pem`<br> 
+`файл для IOS - /root/VPNclient.mobileconfig
+`
+> 
+Удаляем проект:
+```shell
+rm -r /root/IKEv2_for_ios/
 ```
 ___
 ## Шаг 2.
