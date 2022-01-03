@@ -47,7 +47,7 @@ with open('/etc/ipsec.d/cacerts/ca-cert.pem', 'r') as file:
 os.system(
     f'echo'
     f' "{mobile_config.format(certificate=certificate, uuid_1=uuid_1, login=login, uuid_2=uuid_2, ip=ip, password=password, uuid_3=uuid_3, uuid_4=uuid_4)}" '
-    f'> {login}.mobileconfig')
+    f'> /root/{login}.mobileconfig')
 
 print(f'[+]\n\n\nДанные для подключения:\nip - {ip}\nlogin - {login}\npassword - {password}\nсертификат - '
       f'/etc/ipsec.d/cacerts/ca-cert.pem\nфайл для IOS - /root/{login}.mobileconfig\n\n')
