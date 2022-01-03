@@ -1,9 +1,17 @@
-# IKEv2_for_ios
-script for easy installation of vpn on your device
+# VPN IKEv2 + скрипт для IOS
+### Простая и быстрая установка VPN соединения
+___
 
-git clone https://github.com/lastlibertarian/IKEv2_for_ios
-
-cd IKEv2_for_ios/
-
-python3 main.py
+#### Требования:
++ Сервер Ubuntu 20.04
+___
+## Шаг 1.
+Качаем проект:
+```sh
+git clone https://github.com/lastlibertarian/IKEv2_for_ios /root/IKEv2_for_ios
+```
+Запускаем скрипт:
+```sh
+python3 /root/IKEv2_for_ios/main.py
+```
 
