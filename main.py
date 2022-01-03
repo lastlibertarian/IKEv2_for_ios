@@ -193,4 +193,4 @@ script = f'<?xml version="1.0" encoding="UTF-8"?>\n\
 os.system(f'echo "{script}" > {login}.mobileconfig')
 
 print(f'[+]\n\n\nДанные для подключения:\nip - {ip}\nlogin - {login}\npassword - {password}\nсертификат - '
-      f'/etc/ipsec.d/cacerts/ca-cert.pem\nфайл для IOS - /root/{login}.mobileconfig')
+      f'/etc/ipsec.d/cacerts/ca-cert.pem\nфайл для IOS - /root/{login}.mobileconfig\n\n')
