@@ -33,13 +33,13 @@ os.system(f'pki --pub --in ~/pki/private/server-key.pem --type rsa | pki --issue
   --flag serverAuth --flag ikeIntermediate --outform pem \
   > ~/pki/certs/server-cert.pem')
 
-os.system(f'echo Настраиваю туннель IKEv2 && echo {ipsec_conf.format(ip=ip)}> /etc/ipsec.conf && echo [+] && '
-          f'echo {ipsec_secrets.format(login=login, password=password)} > /etc/ipsec.secrets && systemctl restart '
+os.system(f'echo Настраиваю туннель IKEv2 && echo "{ipsec_conf.format(ip=ip)}"> /etc/ipsec.conf && echo [+] && '
+          f'echo "{ipsec_secrets.format(login=login, password=password)}" > /etc/ipsec.secrets && systemctl restart '
           f'strongswan-starter')
 
 os.system('echo Настраиваю сеть && ufw allow OpenSSH && echo "y" | sudo ufw enable && ufw allow 500,4500/udp')
 
-os.system(f'echo {before_rules.format(interface=interface)} > /etc/ufw/before.rules && echo {sysctl_conf} > '
+os.system(f'echo "{before_rules.format(interface=interface)}" > /etc/ufw/before.rules && echo "{sysctl_conf}" > '
           f'/etc/ufw/sysctl.conf && ufw disable && echo "y" | sudo ufw enable')
 
 with open('/etc/ipsec.d/cacerts/ca-cert.pem', 'r') as file:
@@ -47,7 +47,7 @@ with open('/etc/ipsec.d/cacerts/ca-cert.pem', 'r') as file:
 
 os.system(
     f'echo'
-    f' {mobile_config.format(certificate=certificate, uuid_1=uuid_1, login=login, uuid_2=uuid_2, ip=ip, password=password, uuid_3=uuid_3, uuid_4=uuid_4)} '
+    f' "{mobile_config.format(certificate=certificate, uuid_1=uuid_1, login=login, uuid_2=uuid_2, ip=ip, password=password, uuid_3=uuid_3, uuid_4=uuid_4)}" '
     f'> {login}.mobileconfig')
 
 print(f'[+]\n\n\nДанные для подключения:\nip - {ip}\nlogin - {login}\npassword - {password}\nсертификат - '
