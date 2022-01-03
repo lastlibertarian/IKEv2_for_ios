@@ -26,12 +26,12 @@ os.system(
 os.system('echo Создаю приватный ключ && pki --gen --type rsa --size 4096 --outform pem > ~/pki/private/server-key.pem '
           '&& echo [+]')
 
-os.system(f'echo Создаю сертификат &7 pki --pub --in ~/pki/private/server-key.pem --type rsa | pki --issue '
-          f'--lifetime 1825 \
+print('[+]\nСоздаю сертификат')
+os.system(f'pki --pub --in ~/pki/private/server-key.pem --type rsa | pki --issue --lifetime 1825 \
   --cacert ~/pki/cacerts/ca-cert.pem --cakey ~/pki/private/ca-key.pem \
   --dn "CN={ip}" --san @{ip} --san {ip} \
   --flag serverAuth --flag ikeIntermediate --outform pem \
-  > ~/pki/certs/server-cert.pem && echo [+] && cp -r ~/pki/* /etc/ipsec.d/')
+  > ~/pki/certs/server-cert.pem')
 
 os.system(f'echo Настраиваю туннель IKEv2 && echo {ipsec_conf.format(ip=ip)}> /etc/ipsec.conf && echo [+] && '
           f'echo {ipsec_secrets.format(login=login, password=password)} > /etc/ipsec.secrets && systemctl restart '
