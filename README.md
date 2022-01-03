@@ -38,7 +38,7 @@ rm -r /root/IKEv2_for_ios/
 ___
 ## Шаг 2.
 ### Настройка на стороне клиента
-##macOS
+### macOS
 + Качаем сертификат с помощью `scp` либо открываем с помощью `cat /etc/ipsec.d/cacerts/ca-cert.pem`
    
 
