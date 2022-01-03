@@ -38,6 +38,6 @@ rm -r /root/IKEv2_for_ios/
 ___
 ## Шаг 2.
 ### Настройка на стороне клиента
-Mac Os
+Mac Oss
 
 
